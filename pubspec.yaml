@@ -64,7 +64,8 @@ flutter:
     - assets/images/maca.jpg
     - assets/images/carne.png
     - assets/images/noimage.jpg
-    - assets/images/sal.jpeg
+    - assets/images/noimage.png
+  
      
 
   # An image asset can refer to one or more resolution-specific "variants", see

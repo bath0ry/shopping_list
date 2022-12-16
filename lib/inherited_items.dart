@@ -4,11 +4,19 @@ import 'package:shopping_list/cart_items_widget.dart';
 class ItemCartInhertied extends InheritedWidget {
   ItemCartInhertied({required super.child});
   final List<CartItems> itemsList = [
-    CartItems('Apple', 'assets/images/maca.jpg'),
-    CartItems('Meat', 'assets/images/carne.png'),
+    CartItems(
+      'Apple',
+    ),
+    CartItems(
+      'Meat',
+    ),
   ];
-  void newItem(String name, String image) {
-    itemsList.add(CartItems(name, image));
+  void newItem(
+    String name,
+  ) {
+    itemsList.add(CartItems(
+      name,
+    ));
   }
 
   static ItemCartInhertied of(BuildContext context) {

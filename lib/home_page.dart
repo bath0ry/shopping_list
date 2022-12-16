@@ -22,11 +22,10 @@ class HomePage extends StatelessWidget {
         ),
       ),
       backgroundColor: Color.fromARGB(255, 221, 243, 159),
-      body: Stack(children: [
-        ListView(
-          children: ItemCartInhertied.of(context).itemsList,
-        ),
-      ]),
+      body: ListView(
+        children: ItemCartInhertied.of(context).itemsList,
+        padding: EdgeInsets.only(top: 10, bottom: 80),
+      ),
     );
   }
 }

@@ -14,7 +14,7 @@ class FormPage extends StatefulWidget {
 
 class _FormPageState extends State<FormPage> {
   TextEditingController controllerName = TextEditingController();
-  TextEditingController controllerImage = TextEditingController();
+
   final _formKey = GlobalKey<FormState>();
   bool valueValidator(String? value) {
     if (value != null && value.isEmpty) {
@@ -84,52 +84,11 @@ class _FormPageState extends State<FormPage> {
                                     borderRadius: BorderRadius.circular(20))),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(30),
-                          child: TextFormField(
-                            validator: (String? value) {
-                              if (valueValidator(value)) {
-                                return 'Add a valid image';
-                              }
-                              return null;
-                            },
-                            onChanged: (text) {
-                              setState(() {});
-                            },
-                            keyboardType: TextInputType.url,
-                            controller: controllerImage,
-                            textAlign: TextAlign.center,
-                            decoration: InputDecoration(
-                                filled: true,
-                                fillColor: Color.fromARGB(255, 206, 206, 206),
-                                hintText: 'Item Image Url',
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20))),
-                          ),
-                        ),
-                        Container(
-                          height: 100,
-                          width: 72,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: const Color.fromARGB(255, 255, 255, 255),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(15),
-                            child: Image.network(
-                              controllerImage.text,
-                              fit: BoxFit.cover,
-                              errorBuilder: (context, error, stackTrace) {
-                                return Image.asset('assets/images/noimage.jpg');
-                              },
-                            ),
-                          ),
-                        ),
                         TextButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
-                              ItemCartInhertied.of(widget.itemContext).newItem(
-                                  controllerName.text, controllerImage.text);
+                              ItemCartInhertied.of(widget.itemContext)
+                                  .newItem(controllerName.text);
                               ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                       content:
