@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SafeArea(child: ItemCartInhertied(child: HomePage())),
+      home: SafeArea(child: ItemCartInhertied(child: const HomePage())),
     );
   }
 }
