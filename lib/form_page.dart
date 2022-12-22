@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:shopping_list/cart_items_dao.dart';
+import 'package:shopping_list/cart_items_widget.dart';
 import 'package:shopping_list/home_page.dart';
-import 'package:shopping_list/inherited_items.dart';
 
 class FormPage extends StatefulWidget {
   const FormPage({super.key, required this.itemContext});
@@ -29,7 +30,7 @@ class _FormPageState extends State<FormPage> {
       child: Form(
         key: _formKey,
         child: Scaffold(
-          backgroundColor: Color.fromARGB(255, 221, 243, 159),
+          backgroundColor: const Color.fromARGB(255, 221, 243, 159),
           body: SingleChildScrollView(
             child: Column(
               children: [
@@ -54,9 +55,9 @@ class _FormPageState extends State<FormPage> {
                     width: 370,
                     height: 600,
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 61, 61, 61),
+                        color: const Color.fromARGB(255, 61, 61, 61),
                         borderRadius: BorderRadius.circular(20),
-                        border: Border.fromBorderSide(BorderSide(
+                        border: const Border.fromBorderSide(BorderSide(
                             width: 4, color: Color.fromARGB(255, 0, 0, 0)))),
                     child: Column(
                       children: [
@@ -73,12 +74,11 @@ class _FormPageState extends State<FormPage> {
                             onChanged: (text) {
                               setState(() {});
                             },
-                            maxLength: 15,
-                            maxLines: 1,
                             textAlign: TextAlign.center,
                             decoration: InputDecoration(
                                 filled: true,
-                                fillColor: Color.fromARGB(255, 206, 206, 206),
+                                fillColor:
+                                    const Color.fromARGB(255, 206, 206, 206),
                                 hintText: 'Item Name',
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(20))),
@@ -87,10 +87,10 @@ class _FormPageState extends State<FormPage> {
                         TextButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
-                              ItemCartInhertied.of(widget.itemContext)
-                                  .newItem(controllerName.text);
+                              CartItemsDao()
+                                  .save(CartItems(controllerName.text));
                               ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
+                                  const SnackBar(
                                       content:
                                           Text('Item successfully added!')));
                               Navigator.of(context).pop();
