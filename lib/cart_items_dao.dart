@@ -1,4 +1,4 @@
-import 'package:shopping_list/cart_database.dart';
+import 'package:shopping_list/data/cart_database.dart';
 import 'package:shopping_list/cart_items_widget.dart';
 import 'package:sqflite/sqflite.dart';
 
