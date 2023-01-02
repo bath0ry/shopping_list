@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:shopping_list/cart_items_dao.dart';
-import 'package:shopping_list/cart_items_widget.dart';
-import 'package:shopping_list/home_page.dart';
+import 'package:shopping_list/components/cart_items_dao.dart';
+import 'package:shopping_list/components/cart_items_widget.dart';
+import 'package:shopping_list/pages/home_page.dart';
 
 class FormPage extends StatefulWidget {
   const FormPage({super.key, required this.itemContext});
@@ -96,16 +96,16 @@ class _FormPageState extends State<FormPage> {
                               Navigator.of(context).pop();
                             }
                           },
-                          child: Text(
+                          style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.all(Colors.black)),
+                          child: const Text(
                             'ADD ITEM',
                             style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600,
                                 color: Color.fromARGB(255, 221, 243, 159)),
                           ),
-                          style: ButtonStyle(
-                              backgroundColor:
-                                  MaterialStateProperty.all(Colors.black)),
                         )
                       ],
                     ),

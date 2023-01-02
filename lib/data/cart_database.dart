@@ -1,4 +1,4 @@
-import 'package:shopping_list/cart_items_dao.dart';
+import 'package:shopping_list/components/cart_items_dao.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 

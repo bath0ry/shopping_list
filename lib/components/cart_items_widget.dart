@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_list/cart_items_dao.dart';
+import 'package:shopping_list/components/cart_items_dao.dart';
 
 class CartItems extends StatefulWidget {
   final String itemName;
