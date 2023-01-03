@@ -50,7 +50,7 @@ class _CartItemsState extends State<CartItems> {
                 widget.itemName,
                 style: const TextStyle(
                     color: Color.fromARGB(255, 245, 233, 129),
-                    fontSize: 20,
+                    fontSize: 24,
                     fontWeight: FontWeight.w600),
                 overflow: TextOverflow.fade,
                 maxLines: 1,
@@ -68,7 +68,7 @@ class _CartItemsState extends State<CartItems> {
             Text(
               '${widget.itemQuanty}',
               style: const TextStyle(
-                  fontSize: 16,
+                  fontSize: 20,
                   color: Color.fromARGB(255, 245, 233, 129),
                   fontWeight: FontWeight.w600),
             ),
@@ -81,12 +81,15 @@ class _CartItemsState extends State<CartItems> {
                   color: Color.fromARGB(255, 240, 224, 85),
                 )),
             IconButton(
-                onPressed: () {
-                  CartItemsDao().delete(widget.itemName);
-                },
-                icon: Icon(Icons.delete_forever)),
+              onPressed: () {
+                CartItemsDao().delete(widget.itemName);
+              },
+              icon: Icon(Icons.delete_forever),
+              color: Color.fromARGB(255, 199, 199, 199),
+            ),
             Checkbox(
-                fillColor: MaterialStateProperty.all(Colors.red),
+                fillColor: MaterialStateProperty.all(
+                    Color.fromARGB(255, 231, 121, 121)),
                 value: isChecked,
                 onChanged: ((newBool) {
                   setState(() {

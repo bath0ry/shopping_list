@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
             Icons.add,
           ),
         ),
-        backgroundColor: const Color.fromARGB(255, 221, 243, 159),
+        backgroundColor: Color.fromARGB(255, 75, 75, 75),
         body: Padding(
           padding: const EdgeInsets.only(top: 10, bottom: 80),
           child: FutureBuilder(
@@ -62,10 +62,14 @@ class _HomePageState extends State<HomePage> {
                       );
                     }
                     return const Center(
-                      child: Text('Ainda não há tarefas'),
+                      child: Text(
+                        'Ainda não há tarefas',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     );
                   }
-                  return const Text('Erro ao pegar dados');
+                  return const Text('Erro ao pegar dados',
+                      style: TextStyle(color: Colors.white));
               }
             },
             future: CartItemsDao().findAll(),

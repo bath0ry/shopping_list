@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shopping_list/components/cart_items_dao.dart';
 import 'package:shopping_list/components/cart_items_widget.dart';
 import 'package:shopping_list/pages/home_page.dart';
@@ -30,7 +31,7 @@ class _FormPageState extends State<FormPage> {
       child: Form(
         key: _formKey,
         child: Scaffold(
-          backgroundColor: const Color.fromARGB(255, 221, 243, 159),
+          backgroundColor: const Color.fromARGB(255, 75, 75, 75),
           body: SingleChildScrollView(
             child: Column(
               children: [
@@ -53,17 +54,20 @@ class _FormPageState extends State<FormPage> {
                 Center(
                   child: Container(
                     width: 370,
-                    height: 600,
+                    height: 200,
                     decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 61, 61, 61),
                         borderRadius: BorderRadius.circular(20),
                         border: const Border.fromBorderSide(BorderSide(
-                            width: 4, color: Color.fromARGB(255, 0, 0, 0)))),
+                            width: 2, color: Color.fromARGB(255, 0, 0, 0)))),
                     child: Column(
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(30),
                           child: TextFormField(
+                            style: TextStyle(
+                                fontSize: 19, fontWeight: FontWeight.w600),
+                            cursorColor: Colors.black,
                             validator: (String? value) {
                               if (valueValidator(value)) {
                                 return 'Add a valid name';
@@ -97,20 +101,24 @@ class _FormPageState extends State<FormPage> {
                             }
                           },
                           style: ButtonStyle(
-                              backgroundColor:
-                                  MaterialStateProperty.all(Colors.black)),
+                              backgroundColor: MaterialStateProperty.all(
+                                  Color.fromARGB(255, 22, 22, 22))),
                           child: const Text(
-                            'ADD ITEM',
+                            'Add Item',
                             style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600,
-                                color: Color.fromARGB(255, 221, 243, 159)),
+                                color: Color.fromARGB(255, 154, 196, 243)),
                           ),
                         )
                       ],
                     ),
                   ),
-                )
+                ),
+                Lottie.network(
+                    'https://assets9.lottiefiles.com/packages/lf20_ymbx3fps.json',
+                    width: 400,
+                    height: 350)
               ],
             ),
           ),
