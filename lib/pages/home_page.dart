@@ -12,8 +12,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   Future<void> _reloadList() async {
-    var newList =
-        await Future.delayed(Duration(seconds: 2), () => CartItemsDao());
     setState(() {});
   }
 
@@ -36,7 +34,7 @@ class _HomePageState extends State<HomePage> {
             Icons.add,
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 75, 75, 75),
+        backgroundColor: const Color.fromARGB(255, 75, 75, 75),
         body: RefreshIndicator(
           color: Colors.black,
           onRefresh: _reloadList,
@@ -47,16 +45,16 @@ class _HomePageState extends State<HomePage> {
                 List<CartItems>? items = snapshot.data;
                 switch (snapshot.connectionState) {
                   case ConnectionState.none:
-                    return Center(
+                    return const Center(
                       child: CircularProgressIndicator(),
                     );
 
                   case ConnectionState.waiting:
-                    return Center(
+                    return const Center(
                       child: CircularProgressIndicator(),
                     );
                   case ConnectionState.active:
-                    return Center(
+                    return const Center(
                       child: CircularProgressIndicator(),
                     );
                   case ConnectionState.done:
