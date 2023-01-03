@@ -84,7 +84,7 @@ class _CartItemsState extends State<CartItems> {
               onPressed: () {
                 CartItemsDao().delete(widget.itemName);
               },
-              icon: Icon(Icons.delete_forever),
+              icon: Icon(Icons.delete),
               color: Color.fromARGB(255, 199, 199, 199),
             ),
             Checkbox(
