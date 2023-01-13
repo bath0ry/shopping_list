@@ -20,5 +20,5 @@ Você pode colocar um nome e adicionar o item para a home.
 Ao adicionar o item você tem a possibilidade de adicionar ou remover a quantidade, dar check no item já comprado e remover o item. 
 No aplicativo também foi implementado um pull refresh.
 
-![image](https://user-images.githubusercontent.com/110061019/212271197-6f921a4e-0dbe-46cd-9599-a3495ab842cf.png)
+
 
